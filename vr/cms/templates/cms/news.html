@@ -1,0 +1,13 @@
+{% extends 'cms/base.html' %}
+
+{% block content %}
+<div class="news news-inner">
+{% for post in news %}
+    <div class="news-item">
+        <div class="news-item__pic"><a href="{% url 'post:detail' post.id %}"><img src="{{ post.image.url}}" alt="{{ post.title }}"></a></div>
+        <p class="news-item__date">{{ post.date|date:'d.m.Y'}}</p>
+        <div class="news-item__title"><a href="{% url 'post:detail' post.id %}">{{ post.title }}</a></div>
+    </div>
+{% endfor %}
+</div>
+{% endblock content %}

@@ -1,0 +1,21 @@
+{% extends 'cms/base.html' %}
+{% block content %}
+<h1>Часто задаваемые вопросы:</h1>
+<div class="faq-row">
+    <div class="faq-col faq-col-one">
+        <div class="faq-items">
+            {% for f in faq_item %}
+            <div class="faq-item">
+                <div class="faq-item__question">
+                    <span>{{ f.faq_question }}</span>
+                    <div class="open_answer"></div>
+                </div>
+                <div class="faq-item__answer">
+                    {{ f.faq_answer|safe }}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock content %}

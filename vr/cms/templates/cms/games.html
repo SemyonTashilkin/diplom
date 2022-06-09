@@ -1,0 +1,12 @@
+{% extends 'cms/base.html' %}
+{% block content %}
+    <h1>Популярные игры VR</h1>
+    <div class="game-row">
+        {% for game in games %}
+            <div class="game-item">
+                <div class="game-item__img"><img src="{{ game.image.url}}" alt="{{ game.title }}"></div>
+                <p class="game-item__name">{{ game.title }}</p>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock content %}

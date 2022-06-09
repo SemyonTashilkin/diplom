@@ -1,0 +1,35 @@
+<div class="faq-row">
+    <div class="faq-col">
+        <div class="faq-items">
+            {% for f in faq_item %}
+            <div class="faq-item">
+                <div class="faq-item__question">
+                    <span>{{ f.faq_question }}</span>
+                    <div class="open_answer"></div>
+                </div>
+                <div class="faq-item__answer">
+                    {{ f.faq_answer|safe }}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="faq-col">
+        <div class="faq_form">
+            <p class="faq_form-title">У вас остались вопросы? Задайте их нашему менеджеру</p>
+            <p class="faq_form-subtitle">Оставьте заявку и наш менеджер<br> перезвонит вам в ближайшее время</p>
+            <form action="{% url 'thanks_page' %}" method="POST">
+                {% csrf_token %}
+                <div class="form-group row">
+                    {{ form.name }}
+                </div>
+                <div class="form-group row">
+                    {{ form.phone }}
+                </div>
+                <div class="form-group row form-group-btn">
+                    <button type="submit" class="btn btn-success">Оставить заявку</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

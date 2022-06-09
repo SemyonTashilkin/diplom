@@ -1,0 +1,56 @@
+{% extends 'cms/base.html' %}
+{% block content %}
+<!-- промо -->
+<div class="promo">
+    <div class="promo-wrap">
+        <div class="fr promo-img relative"></div>
+        <div class="fl promo-text">
+            <h1>Сайт про VR-игры<br>все игры<br>все новости</h1>
+            <p class="promo-desc">Откройте для себя мир виртуальной реальности</p>
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>
+<!-- преимущества -->
+<div class="advantages">
+    <div class="advantages-item">
+        <div class="advantages-item__pic">
+            <img src="/static/img/icon-adv1.svg" alt="Преимущество">
+        </div>
+        <p class="advantages-item__text">Все игры</p>
+    </div>
+    <div class="advantages-item">
+        <div class="advantages-item__pic">
+            <img src="/static/img/icon-adv2.svg" alt="Преимущество">
+        </div>
+        <p class="advantages-item__text">Все новости</p>
+    </div>
+    <div class="advantages-item">
+        <div class="advantages-item__pic">
+            <img src="/static/img/icon-adv3.svg" alt="Преимущество">
+        </div>
+        <p class="advantages-item__text">Новый уровень развлечений</p>
+    </div>
+    <div class="advantages-item">
+        <div class="advantages-item__pic">
+            <img src="/static/img/icon-adv1.svg" alt="Преимущество">
+        </div>
+        <p class="advantages-item__text">Новый уровень развлечений</p>
+    </div>
+</div>
+<!-- новости -->
+<h2 class="center">Новости</h2>
+<div class="news news_home">
+{% for post in news %}
+    <div class="news-item">
+        <div class="news-item__pic"><a href="{% url 'post:detail' post.id %}"><img src="{{ post.image.url}}" alt="{{ post.title }}"></a></div>
+        <p class="news-item__date">{{ post.date|date:'d.m.Y'}}</p>
+        <div class="news-item__title">{{ post.title }}</div>
+    </div>
+{% endfor %}
+</div>
+<div class="all_news center"><a class="all_news__link" href="/news">Смотреть все новости</a></div>
+<!-- ЧаВо -->
+<h2 class="center">Часто задаваемые вопросы:</h2>
+{% include 'cms/faq.html' %}
+{% endblock content %}

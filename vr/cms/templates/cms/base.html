@@ -1,0 +1,58 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сайт про VR-игры</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script src="{% static 'js/jquery.js' %}"></script>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-logo">
+                <a href="/"><img src="{% static 'img/logo.png' %}" alt="Логотип"></a>
+            </div>
+            <nav id="menu">
+                <ul class="main_menu">
+                    {% for m in mm_item %}
+                        <li><a href="/{{ m.mm_link }}/">{{ m.mm_name }}</a></li>
+                    {% endfor %}
+                </ul>
+            </nav>
+            <p class="header-phone">
+                <a href="tel:+70000000000">+7 (000) 000-00-00</a>
+            </p>
+        </div>
+    </header>
+    <div class="wrapper_all">
+        <div class="wrapper">
+            <div class="container">
+                {% block content %}
+                {% endblock content %}
+            </div>
+        </div> <!-- end wrapper -->
+    </div> <!-- end wrapper_all -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-logo">
+                <img src="{% static 'img/logo.png' %}" alt="Логотип">
+            </div>
+            <p class="footer-phone">
+                <a href="tel:+70000000000">+7 (000) 000-00-00</a>
+            </p>
+        </div>
+        <div class="container">
+            <div class="partners">
+    <img src="/static/img/ps.png" alt="">
+    <img src="/static/img/ubisoft.png" alt="">
+    <img src="/static/img/xbox.png" alt="">
+    <img src="/static/img/steam.png" alt="">
+</div>
+        </div>
+    </footer>
+    <script src="{% static 'js/scripts.js' %}"></script>
+</body>
+</html>

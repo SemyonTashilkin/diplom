@@ -1,0 +1,15 @@
+{% extends 'cms/base.html' %}
+{% block content %}
+    <h1>Наши контакты</h1>
+    <div class="contacts-row">
+        <div class="contacts-item contacts-text">
+            <p class="contacts-phone"><a href="tel:+70000000000">+7 (000) 000-00-00</a></p>
+            <p class="contacts-address">г. Саратов, ул. Асраханская 77</p>
+            <div class="time_work"><strong>Время работы:</strong><br> <span>Ежедневно 10:00 - 00:00</span></div>
+            <div class="email_link"><a href="mailto:admin@gmail.com" target="_blank">admin@gmail.com</a></div>
+        </div>
+        <div class="contacts-item contacts-map">
+            <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Abbc7ef8d9da12766f905fd54f50145d100574acad1e48e9b0d4d970b2bd842e2&amp;width=100%25&amp;height=282&amp;lang=ru_RU&amp;scroll=true"></script>
+        </div>
+    </div>
+{% endblock content %}
